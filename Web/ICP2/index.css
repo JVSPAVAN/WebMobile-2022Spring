@@ -1,0 +1,166 @@
+.title {
+    background-color: rgb(0, 68, 124) !important;
+    min-height: 12em;
+    max-width: 80%;
+    contain: strict;
+    margin-left: 10%;
+    box-shadow: 0 0 0.5em steelblue;
+}
+
+.name {
+    color: whitesmoke;
+    background-color: rgb(0, 68, 124) !important;
+    max-width: 200em;
+    min-height: 9.5em;
+    padding-top: 2.5em;
+}
+
+#fullname {
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+#description {
+    font-size: 1em;
+    font-family: 'Nunito', sans-serif;
+}
+
+.image {
+    max-height: 10em;
+    max-width: 10em;
+    min-width: 10em;
+    min-height: 10em;
+    margin: 1em;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(28, 68, 128) !important;
+    border-radius: 10em;
+}
+
+.skills {
+    min-height: 12em;
+    max-width: 80%;
+    contain: strict;
+    margin-left: 10%;
+    color: cornflowerblue;
+    font-family: 'Nunito', sans-serif;
+}
+
+.edu {
+    min-height: 12em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    margin-right: 1em;
+    color: rgb(0, 68, 124);
+}
+
+.work {
+    min-height: 12em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    margin-left: 1em;
+    color: rgb(0, 68, 124);
+}
+
+ol li {
+    font-weight: bold;
+}
+
+ol .marks {
+    float: right;
+    font-weight: bold;
+}
+
+ol .desc {
+    font-size: smaller;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 10px;
+    max-width: 80%;
+    margin-left: 10%;
+    font-family: 'Nunito', sans-serif;
+}
+
+.grid-item {
+    padding: 20px;
+}
+
+.project {
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+#projects {
+    text-align: center;
+    color: darkolivegreen;
+}
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 10px;
+    max-width: 80%;
+    margin-left: 10%;
+    font-family: 'Nunito', sans-serif;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 10px;
+    max-width: 80%;
+    margin-left: 10%;
+    font-family: 'Nunito', sans-serif;
+}
+
+#skype {
+    padding: 20px;
+    text-align: center;
+    color: rgb(60, 60, 60);
+    font-size: 1em;
+}
+
+#skype:hover {
+    color: rgb(22, 181, 255);
+    font-size: 1.1em;
+}
+
+#github {
+    padding: 20px;
+    text-align: center;
+    color: rgb(60, 60, 60);
+    font-size: 1em;
+}
+
+#github:hover {
+    color: black;
+    font-size: 1.1em;
+}
+
+#facebook {
+    padding: 20px;
+    text-align: center;
+    color: rgb(60, 60, 60);
+    font-size: 1em;
+}
+
+#facebook:hover {
+    color: rgb(0, 105, 224);
+    font-size: 1.1em;
+}
+
+#instagram {
+    padding: 20px;
+    text-align: center;
+    color: rgb(60, 60, 60);
+    font-size: 1em;
+}
+
+#instagram:hover {
+    color: rgb(252, 31, 123);
+    font-size: 1.1em;
+}
