@@ -1,3 +1,5 @@
+
+/* This is used to add a background colour to the whole div using a class */
 .title {
     background-color: rgb(0, 68, 124) !important;
     min-height: 12em;
@@ -76,6 +78,9 @@ ol .desc {
     font-size: smaller;
 }
 
+
+/* This is used to divs in a grid format*/
+
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -122,7 +127,10 @@ ol .desc {
     text-align: center;
     color: rgb(60, 60, 60);
     font-size: 1em;
+    transition: 0.3s;
 }
+
+/* This is used to change the formatting on hovering over a div*/
 
 #skype:hover {
     color: rgb(22, 181, 255);
@@ -134,6 +142,7 @@ ol .desc {
     text-align: center;
     color: rgb(60, 60, 60);
     font-size: 1em;
+    transition: 0.3s;
 }
 
 #github:hover {
@@ -146,6 +155,7 @@ ol .desc {
     text-align: center;
     color: rgb(60, 60, 60);
     font-size: 1em;
+    transition: 0.3s;
 }
 
 #facebook:hover {
@@ -158,6 +168,7 @@ ol .desc {
     text-align: center;
     color: rgb(60, 60, 60);
     font-size: 1em;
+    transition: 0.3s;
 }
 
 #instagram:hover {
