@@ -1,0 +1,30 @@
+/* To apply font to the whole page */
+#page{
+    font-family: 'Nunito', sans-serif;
+}
+
+/* To provide background after declaring the user as winner */
+.backGround{
+    background-image: url('https://www.pngplay.com/wp-content/uploads/12/Congratulations-Gifs-Transparent-Image.gif');
+    background-repeat: repeat;
+}
+
+#user-score{
+    color: darkslategrey;
+    font-weight: bolder;
+}
+
+#comp-score{
+    color: darkslategrey;
+    font-weight: bolder;
+}
+
+.copyright {
+    bottom: 1em;
+    position: fixed;
+    width: 100%;
+  }
+
+  h1{
+    color:#2c3e50;
+  }
