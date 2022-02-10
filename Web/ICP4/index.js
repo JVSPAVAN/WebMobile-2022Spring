@@ -1,6 +1,5 @@
 function getGithubInfo(user) {
-  //1. Create an instance of XMLHttpRequest class and send a GET request using it.
-  // The function should finally return the object(it now contains the response!)
+ // A ajax GET call is made for obtaining the user data in  a JSON format.
   $.ajax({
     type: "GET",
     url: "https://api.github.com/users/" + user,
@@ -18,7 +17,7 @@ function getGithubInfo(user) {
 }
 
 function showUser(user) {
-  //2. set the contents of the h2 and the two div elements in the div '#profile' with the user content
+    // The obtained user data is displyed in the HTML page dynamically.
   document.getElementById("user").innerHTML = user.login;
   document.getElementById("avatarpic").src = user.avatar_url;
   document.getElementById("link").href = user.html_url;
@@ -26,6 +25,10 @@ function showUser(user) {
   document.getElementById("gitid").innerHTML = user.id;
   repos(user);
 }
+
+/* 
+ The repos function is used to get the repos data of that particular user.
+*/
 
 function repos(user) {
   $.ajax({
@@ -43,6 +46,8 @@ function repos(user) {
     });
 }
 
+
+// The received repos data is displayed on the HTML.
 function showRepos(repos) {
   document.getElementById("repos").style.visibility = "visible";
   for (i = 0; i < repos.length; i++) {
@@ -69,8 +74,11 @@ function showRepos(repos) {
   }
 }
 
+/*
+    If the given username is not present in the git database, User not found image will be displayed.
+*/
+
 function noSuchUser(username) {
-  //3. set the elements such that a suitable message is displayed
   let codeNotFound = `
     <div class="row mt-5">
         <div class="col-md-12 text-center">
