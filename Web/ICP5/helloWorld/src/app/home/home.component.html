@@ -1,0 +1,148 @@
+<div class="webpage" style="background-color: cornflowerblue;">
+  <nav class="navbar navbar-light bg-light p-0">
+    <div class="container">
+      <span class="navbar-brand mb-0" style="font-weight: bolder;font-size: larger;transform: translateX(-10em);"><img
+          src="../../assets/Untitled.png" style="height:5em; width:10em;"> To-Do List</span>
+      <span style="font-family: 'Nunito', sans-serif !important;">
+        <h2>Count - {{count}}</h2>
+      </span>
+      <span style="font-family: 'Nunito', sans-serif !important;">
+        <h2>In Progress - {{Pcount}}</h2>
+      </span>
+      <span style="font-family: 'Nunito', sans-serif !important;">
+        <h2>Expired - {{Ecount}}</h2>
+      </span>
+    </div>
+  </nav>
+
+
+  <div class="container mt-3" style="font-family: 'Nunito', sans-serif !important;">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="edit">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Add Task
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form class="row g-3" [formGroup]="createTaskForm" action="" method="post">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Task Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="taskName">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Task description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+              formControlName="taskDesc"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field color="accent" appearance="fill" class="col-md-12">
+                <mat-label>Date</mat-label>
+                <input class="col-md-12" matInput [matDatepicker]="picker2" formControlName="dateControl">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field color="accent" appearance="fill" class="col-md-12">
+                <mat-label>Time</mat-label>
+                <input class="col-md-12" matInput [ngxTimepicker]="picker" formControlName="timeControl">
+                <ngx-material-timepicker-toggle matSuffix [for]="picker"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #picker color="primary"></ngx-material-timepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary col-md-4" (click)="createTask()">Create</button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div *ngFor="let record of list;let i = index">
+      <mat-card class="example-card mt-3">
+        <div *ngIf="!record.edit">
+          <mat-card-title>{{record.taskName}} <p [ngClass]="record.progress == 'Expired' ? 'exp' : 'inp' ">
+              {{record.progress}}</p>
+          </mat-card-title>
+          <mat-card-content class="m-0">
+            <p class="mt-3">{{record.taskDesc}}</p>
+            <div *ngIf="record.showTimer" class="row text-center">
+              <div class="col-md-1 m-3"></div>
+              <div class="card col-md-2 m-3"
+                style="background-color: rgb(174, 223, 255);font-family: 'Nunito', sans-serif !important;">
+                <h4 class="mt-2">Days</h4>
+                <h1 style="font-weight: bold;">{{record.days}}</h1>
+              </div>
+              <div class="card col-md-2 m-3" style="background-color: rgb(174, 223, 255);">
+                <h4 class="mt-2">Hours</h4>
+                <h1 style="font-weight: bold;">{{record.hours}}</h1>
+              </div>
+              <div class="card col-md-2 m-3" style="background-color: rgb(174, 223, 255);">
+                <h4 class="mt-2">Mins</h4>
+                <h1 style="font-weight: bold;">{{record.mins}}</h1>
+              </div>
+              <div class="card col-md-2 m-3" style="background-color: rgb(174, 223, 255);">
+                <h4 class="mt-2">Secs</h4>
+                <h1 style="font-weight: bold;">{{record.secs}}</h1>
+              </div>
+              <div class="col-md-1 m-3"></div>
+            </div>
+
+            <div class="card col-md-12 text-center">
+              <h4 class="mt-2">Expiry</h4>
+              <h3 style="font-weight: bold;">{{record.date}}</h3>
+              <mat-progress-bar mode="determinate" [value]="record.timeleft" style="height: 0.4em;"></mat-progress-bar>
+            </div>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions class="text-center m-0 pb-0">
+            <button class="btn btn-light-primary ml-4" (click)="openDialog(i)">Edit</button>
+            <button *ngIf="record.progress != 'Expired'" class="btn btn-light-success mr-4" style="color: green;"
+              (click)="expireTask(i)">Expire</button>
+            <button class="btn btn-light-danger mr-4" style="color: red;" (click)="deleteTask(i)">Delete</button>
+          </mat-card-actions>
+        </div>
+        <div *ngIf="record.edit">
+          <form class="row g-3" [formGroup]="editTaskForm" action="" method="post">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Task Name</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" value="" formControlName="taskName">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Task description</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="taskDesc"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field color="accent" appearance="fill" class="col-md-12">
+                  <mat-label>Date</mat-label>
+                  <input class="col-md-12" matInput [matDatepicker]="picker2" formControlName="dateControl">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field color="accent" appearance="fill" class="col-md-12">
+                  <mat-label>Time</mat-label>
+                  <input class="col-md-12" matInput [ngxTimepicker]="picker" formControlName="timeControl">
+                  <ngx-material-timepicker-toggle matSuffix [for]="picker"></ngx-material-timepicker-toggle>
+                  <ngx-material-timepicker #picker color="primary"></ngx-material-timepicker>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-primary col-md-4" (click)="updateTask(i)">Update</button>
+            </div>
+          </form>
+        </div>
+      </mat-card>
+
+    </div>
+  </div>
+
+  <footer class="copyright text-center">
+    Created by JVS PAVAN <img src="../../assets/intangible-asset.png" width="50" height="50" /> 2022
+  </footer>
+</div>

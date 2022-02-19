@@ -1,0 +1,50 @@
+.webpage{
+    font-family: 'Nunito', sans-serif !important;
+}
+.container{
+    font-family: 'Nunito', sans-serif !important;
+}
+.inp{
+        float: right;
+        color: darkgreen;
+        background: rgb(168, 224, 168);
+        padding: 0.5em;
+        font-weight: bolder;
+        font-size: medium;
+        border-radius: 3.5em;
+        border-width: 3px;
+        border-color: darkgreen;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        font-family: 'Nunito', sans-serif !important;
+}
+
+.exp{
+    float: right;
+    color: red;
+    background: lightcoral;
+    padding: 0.5em;
+    border-radius: 3.5em;
+    border-width: 0.1em;
+    border-color: red;
+    font-size: medium;
+    font-weight: bolder;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-family: 'Nunito', sans-serif !important;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-family: 'Nunito', sans-serif !important;
+}
+
+.copyright {
+    bottom: 1em;
+    margin-top: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    /* position: fixed; */
+    width: 100%;
+    font-weight: bold;
+    font-size: medium;
+    background-color: rgb(211, 250, 255);
+  }
