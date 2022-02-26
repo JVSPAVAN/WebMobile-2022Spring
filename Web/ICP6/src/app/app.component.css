@@ -1,0 +1,9 @@
+.image{
+  height:66em; background-size:cover; width:100%;
+  background-image:url('~images/bg.jpg');
+  background-position:100% 100%;
+  background-repeat: repeat-y;
+}
+.container{
+  font-family: 'Nunito', sans-serif;
+}

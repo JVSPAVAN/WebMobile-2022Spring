@@ -1,0 +1,195 @@
+<div class="container text-center">
+  <div class="container">
+    <h2 class="mt-3"><b>Search for your recipe!!
+      </b></h2><br>
+    <form>
+      <div class="form-group mb-5">
+        <div class="form-group row input-group">
+          <input #recipe class="form-control col-md-6 m-2" placeholder="Recipe name" type="text">
+          <input #place class="form-control col-md-6 m-2" placeholder="Place" type="text">
+        </div>
+        <br>
+        <button (click)="getVenues()" class="btn btn-primary col-lg-2 col-lg-offset-5 " type="button">Search</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card col-12" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <div class="card-header"><b>How to make</b></div>
+        <div class="card-body" style="max-height: 40em;overflow-x: auto;">
+          <div *ngFor="let recipe of recipeData">
+            <div class="card mb-1 item row" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+              (click)="openModal(recipe.recipe)">
+              <div class="col-md-6 ">
+                <p style="margin-top: 1.5em;padding-left: 2em;">{{recipe.recipe.label}}</p>
+              </div>
+              <div class="col-md-6">
+                <img [src]="recipe.recipe.image"
+                  style="width: 4em; height: 4em;float:right;margin-right: 1em; border-radius: 0.5em;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"
+                  class="mt-1 mb-1">
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card col-12" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+        <div class="card-header"><b>Where to get</b></div>
+        <div class="card-body" style="max-height: 40em;overflow-x: auto;">
+          <div *ngFor="let venue of venuesData">
+            <div class="card mb-1 item row" data-bs-toggle="modal" data-bs-target="#staticBackdropVenue"
+              (click)="openModalVenue(venue)" style="height: 6em;">
+              <div class="col-md-6 ">
+                <p style="margin-top: 1.5em; padding-left: 2em;"> {{venue.name}}</p>
+              </div>
+              <div class="col-md-6">
+                <p style="margin-top: 1em;">{{venue.location.formatted_address}}</p><br>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-lg">
+    <div class="modal-content" *ngIf="modalData">
+      <div class="modal-header">
+        <div class="row col-md-12">
+          <div class="col-md-8" style="flex-direction: column;">
+            <h3 class="modal-title" id="staticBackdropLabel">{{modalData.label}}</h3>
+            <br>
+            <div>
+              <span>
+                <p>Cuisine Type : <b *ngFor="let cuisineType of modalData.cuisineType">{{cuisineType}} </b></p>
+              </span>
+              <span>
+                <p>Calories : <b>{{modalData.calories | number : '1.0-0'}} cal</b></p>
+              </span>
+              <span>
+                <p>Servings : <b>{{modalData.yield}}</b></p>
+              </span>
+              <span style="color: dodgerblue;cursor: pointer;">
+                <i class="fa fa-chrome" aria-hidden="true" style="font-size: larger;"></i>
+                <a href="{{modalData.url}}" style="text-decoration: none;" target="_blank"> Website</a></span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="{{modalData.image}}"
+              style="float: right; height: 10em;width: 10em;border-radius: 1em;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+
+        <p *ngFor="let healthLabel of modalData.healthLabels" class="inp">
+          {{healthLabel}}</p>
+        <br>
+
+        <div class="accordion accordion-flush" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Ingredients
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div *ngFor="let ingredient of modalData.ingredientLines" class="mt-2">
+                  <span>{{ingredient}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                Nutrients
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Label</th>
+                      <th scope="col">Units</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let digest of modalData.digest">
+                      <td>{{digest.label}}</td>
+                      <td>{{digest.total | number : '1.0-0'}} {{digest.unit}}</td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="staticBackdropVenue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-lg">
+    <div class="modal-content" *ngIf="modalDataVenue">
+      <div class="modal-header">
+        <div class="row col-md-12">
+          <div class="col-md-8" style="flex-direction: column;">
+            <h3 class="modal-title" id="staticBackdropLabel">{{modalDataVenue.name}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-md-6">
+            <span>
+              <p>Restaurant Type : <b *ngFor="let category of modalDataVenue.categories">{{category.name}} </b></p>
+            </span>
+            <span>
+              <p>distance : <b>{{modalDataVenue.distance}}m</b></p>
+            </span>
+            <span style="color: dodgerblue;cursor: pointer;">
+              <i class="fa fa-map-o" aria-hidden="true" style="font-size: larger;"></i>
+              <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}
+            &daddr={{modalDataVenue.location.formatted_address}}" style="text-decoration: none;" target="_blank">
+                Location</a></span>
+          </div>
+          <div class="col-md-6" style="float: right;text-align: right;">
+            <p>{{modalDataVenue.location.address}} ({{modalDataVenue.location.cross_street}}),</p>
+            <p>{{modalDataVenue.location.locality}},</p>
+            <p> {{modalDataVenue.location.region}} {{modalDataVenue.location.postcode}}.</p>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
