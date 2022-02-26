@@ -68,29 +68,33 @@
           <mat-card-content class="m-0">
             <p class="mt-3">{{record.taskDesc}}</p>
             <div *ngIf="record.showTimer" class="row text-center">
-              <div class="col-md-1 m-3"></div>
-              <div class="card col-md-2 m-3"
-                style="background-color: rgb(174, 223, 255);font-family: 'Nunito', sans-serif !important;">
+              <div class="card col-md-5 m-3 text-center mr-4 p-0" style="margin-left: 3em !important;">
+                <h4 class="mt-2">Expiry</h4>
+                <h3 style="font-weight: bold;">{{record.date}}</h3>
+                <mat-progress-bar mode="determinate" [value]="record.timeleft" style="height: 0.4em;"></mat-progress-bar>
+              </div>
+              <div class="card col-md-1 m-3 ml-4"
+                style="background-color: rgb(174, 223, 255);font-family: 'Nunito', sans-serif !important;margin-left: 8em !important;">
                 <h4 class="mt-2">Days</h4>
                 <h1 style="font-weight: bold;">{{record.days}}</h1>
               </div>
-              <div class="card col-md-2 m-3" style="background-color: rgb(174, 223, 255);">
+              <div class="card col-md-1 m-3" style="background-color: rgb(174, 223, 255);">
                 <h4 class="mt-2">Hours</h4>
                 <h1 style="font-weight: bold;">{{record.hours}}</h1>
               </div>
-              <div class="card col-md-2 m-3" style="background-color: rgb(174, 223, 255);">
+              <div class="card col-md-1 m-3" style="background-color: rgb(174, 223, 255);">
                 <h4 class="mt-2">Mins</h4>
                 <h1 style="font-weight: bold;">{{record.mins}}</h1>
               </div>
-              <div class="card col-md-2 m-3" style="background-color: rgb(174, 223, 255);">
+              <div class="card col-md-1 m-3" style="background-color: rgb(174, 223, 255);">
                 <h4 class="mt-2">Secs</h4>
                 <h1 style="font-weight: bold;">{{record.secs}}</h1>
               </div>
-              <div class="col-md-1 m-3"></div>
+              
             </div>
 
-            <div class="card col-md-12 text-center">
-              <h4 class="mt-2">Expiry</h4>
+            <div *ngIf="!record.showTimer" class="card col-md-12 text-center">
+              <h4 class="mt-2">Expired</h4>
               <h3 style="font-weight: bold;">{{record.date}}</h3>
               <mat-progress-bar mode="determinate" [value]="record.timeleft" style="height: 0.4em;"></mat-progress-bar>
             </div>

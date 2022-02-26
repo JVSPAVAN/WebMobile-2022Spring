@@ -26,10 +26,10 @@ export class HomeComponent implements OnInit {
   expired: any;
   list: any[] = [
     {
-      date: '2/19/2022 6:00:00',
+      date: '2/22/2022 6:00:00',
       days: 0,
-      hours: 19,
-      mins: 0,
+      hours: 9,
+      mins: 54,
       progress: 'In Progress',
       secs: 21,
       showTimer: true,
