@@ -1,0 +1,44 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-3">
+      <li class="breadcrumb-item ml-1"><a href="/pathway/student-center" style="text-decoration: none;">Pathway</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Student Manage Classes</li>
+    </ol>
+  </nav>
+<div class="container mt-3">
+      <div *ngFor="let record of data;let i = index">
+        <div class="card mb-1">
+          <img src="" class="card-img-top" alt="">
+          <div class="card-body">
+            <p class="card-title pl-1" style="font-weight: bold;background-color: lightslategray; border-radius: 1em; color: azure;">{{record.name}}</p>
+            <p class="card-text m-0">{{record.name}}</p>
+            <table class="table m-0">
+                <thead class="table-light" style="background-color: lightgray; font-weight: bold;">
+                <td>Class</td>
+                <td>Section</td>
+                <td>Days_Times</td>
+                <td>Room</td>
+                <td>Instructor</td>
+                <td>Meeting_Dates</td>
+                <td>Status</td>
+                <td></td>
+                </thead>
+                <tbody>
+                    <td>{{record.Class}}</td>
+                    <td>{{record.Section}}</td>
+                    <td>{{record.Days_Times}}</td>
+                    <td>{{record.Room}}</td>
+                    <td>{{record.Instructor}}</td>
+                    <td>{{record.Meeting_Dates}}</td>
+                    <td>{{record.Status}}</td>
+                    <td><button class="btn btn-outline-info" style="font-size: smaller;">Select</button></td>
+                </tbody>
+              </table>
+              <p class="card-text">Instruction_Mode : {{record.Instruction_Mode}}</p>
+              <p class="card-text">Seats_Remaining : {{record.Seats_Remaining}}</p>
+              <p class="card-text">Location : {{record.Location}}</p>
+              <p class="card-text">Units : {{record.Units}}</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  

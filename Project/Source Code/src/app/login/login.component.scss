@@ -1,0 +1,28 @@
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.panel{
+    position: absolute;
+    top: 20vmin;
+    left: 22vmin;
+    background: white;
+    border-radius: 8px;
+    text-align: left;
+    padding: 3vmin 4vmin 1vmin 5vmin;
+    box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+    font-family: var(--Raleway);
+    z-index: 1;
+    height: 22em;
+    width: 25em;
+}
+
+.image{
+    opacity: 0.9;
+    width: 80%;
+    border-radius: 0.5em;
+    height: 37em;
+    width:25em;
+    top: 10vmin;
+    left: 25vmin;
+}

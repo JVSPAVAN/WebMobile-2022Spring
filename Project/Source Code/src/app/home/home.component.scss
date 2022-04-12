@@ -1,0 +1,29 @@
+html,
+body,
+.view {
+  height: 70vh;
+  border-radius: 1em;
+  margin-top: 4em;
+}
+
+/* Full Page Carousel itself*/
+.carousel {
+  height: 70vh;
+  box-shadow: rgba(0, 0, 0, 0.8);
+}
+
+.carousel .carousel-inner {
+  height: 70vh;
+}
+
+.carousel .carousel-inner .carousel-item,
+.carousel .carousel-inner .active {
+  height: 70vh;
+}
+
+img {
+  &.d-block {
+    height: 70vh;
+    box-shadow: rgba(0, 0, 0, 0.8);
+  }
+}

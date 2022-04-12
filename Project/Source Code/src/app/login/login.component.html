@@ -1,0 +1,33 @@
+<div class="container text-center row mt-5">
+  <div class="card col-md-6 image" style="background-image: url(../../assets/Antique-Book.png);background-size: contain;">
+  </div>
+  <div class="col-md-6" >
+    <div class="card row panel" >
+        <div class="col-md-12 p-0">
+        <h1 class="mb-5">Login</h1>
+      <form class="col-md-12 mt-5 p-0" [formGroup]="loginForm" action="" method="post">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" formControlName="email">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" formControlName="password">
+            <label for="floatingPassword">Password</label>
+          </div>
+        <!-- <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Email</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" formControlName="email">
+          </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Password</span>
+            <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" formControlName="password">
+          </div> -->
+        <div>
+          <button type="submit" class="btn btn-primary mt-3 mb-3" (click)="login()">Login</button>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+

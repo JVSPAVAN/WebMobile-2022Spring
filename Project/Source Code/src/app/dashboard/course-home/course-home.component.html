@@ -1,0 +1,49 @@
+<div style="width: 100%;">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-3">
+      <li class="breadcrumb-item ml-1"><a href="/dashboard" style="text-decoration: none;">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Course</li>
+    </ol>
+  </nav>
+  <div class="row">
+<div class="d-flex flex-column flex-shrink-0 p-3 col-md-2">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <span class="fs-4">Sidebar</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page">
+          Home
+        </a>
+      </li>
+      <li>
+        <a [ngClass]="link == 'announcements' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'announcements'">
+          Announcements
+        </a>
+      </li>
+      <li>
+        <a [ngClass]="link == 'discussions' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'discussions'">
+          Discussions
+        </a>
+      </li>
+      <li>
+        <a [ngClass]="link == 'assignments' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'assignments'">
+          Assignments
+        </a>
+      </li>
+      <li>
+        <a [ngClass]="link == 'grades' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'grades'">
+          Grades
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-10">
+      <app-announcements *ngIf="link == 'announcements'"></app-announcements>
+      <app-assignments *ngIf="link == 'assignments'"></app-assignments>
+      <app-discussions *ngIf="link == 'discussions'"></app-discussions>
+      <app-grades *ngIf="link == 'grades'"></app-grades>
+  </div>
+</div>
+</div>

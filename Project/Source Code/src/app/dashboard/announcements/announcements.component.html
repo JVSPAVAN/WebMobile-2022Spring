@@ -1,0 +1,22 @@
+<p>Announcements</p>
+<div class="container">
+  <ul class="list-group list-group-flush">
+    <div *ngFor="let record of data;let i = index">
+      <li class="list-group-item">
+        <p><strong>{{record.title}}</strong></p>
+        <p>{{record.author}}</p>
+          <div class="row">
+        <div class="col-md-8">
+          
+          <p>{{record.directedTo}}</p>
+          <p>{{record.info}}</p>
+        </div>
+        <div class="col-md-4" style="align-self: center;text-align: right;">
+          <p><strong>Posted On:</strong></p>
+          <p>{{record.date}}</p>
+        </div>
+    </div>
+      </li>
+    </div>
+  </ul>
+</div>
