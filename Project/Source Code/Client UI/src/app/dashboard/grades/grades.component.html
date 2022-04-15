@@ -1,1 +1,25 @@
-<p>grades works!</p>
+<div class="container">
+  <p style="font-size: larger;"><strong>Grades</strong></p>
+  <table class="table table-hover m-0">
+    <thead class="table-light" style="background-color: lightgray; font-weight: bold;">
+      <td>Name</td>
+      <td>Due</td>
+      <td>Score</td>
+      <td>Out of</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let record of data;let i = index">
+          <td>{{record.title}}</td>
+          <td>{{record.due}}</td>
+          <td>{{record.points}}</td>
+          <td>100</td>
+        </tr>
+        <tr style="font-size: large;font-weight: bold;">
+            <td>Total</td>
+            <td></td>
+            <td>{{percentage}} %</td>
+            <td>{{total}} / {{totalOf}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

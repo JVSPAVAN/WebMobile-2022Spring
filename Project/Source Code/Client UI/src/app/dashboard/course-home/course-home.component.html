@@ -3,6 +3,7 @@
     <ol class="breadcrumb mt-3">
       <li class="breadcrumb-item ml-1"><a href="/dashboard" style="text-decoration: none;">Dashboard</a></li>
       <li class="breadcrumb-item active" aria-current="page">Course</li>
+      <li class="breadcrumb-item active" aria-current="page">{{link}}</li>
     </ol>
   </nav>
   <div class="row">
@@ -18,32 +19,32 @@
         </a>
       </li>
       <li>
-        <a [ngClass]="link == 'announcements' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'announcements'">
+        <a [ngClass]="link == 'Announcements' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'Announcements'">
           Announcements
         </a>
       </li>
       <li>
-        <a [ngClass]="link == 'discussions' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'discussions'">
+        <a [ngClass]="link == 'Discussions' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'Discussions'">
           Discussions
         </a>
       </li>
       <li>
-        <a [ngClass]="link == 'assignments' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'assignments'">
+        <a [ngClass]="link == 'Assignments' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'Assignments'">
           Assignments
         </a>
       </li>
       <li>
-        <a [ngClass]="link == 'grades' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'grades'">
+        <a [ngClass]="link == 'Grades' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'Grades'">
           Grades
         </a>
       </li>
     </ul>
   </div>
   <div class="col-md-10">
-      <app-announcements *ngIf="link == 'announcements'"></app-announcements>
-      <app-assignments *ngIf="link == 'assignments'"></app-assignments>
-      <app-discussions *ngIf="link == 'discussions'"></app-discussions>
-      <app-grades *ngIf="link == 'grades'"></app-grades>
+      <app-announcements *ngIf="link == 'Announcements'"></app-announcements>
+      <app-assignments *ngIf="link == 'Assignments'"></app-assignments>
+      <app-discussions *ngIf="link == 'Discussions'"></app-discussions>
+      <app-grades *ngIf="link == 'Grades'"></app-grades>
   </div>
 </div>
 </div>

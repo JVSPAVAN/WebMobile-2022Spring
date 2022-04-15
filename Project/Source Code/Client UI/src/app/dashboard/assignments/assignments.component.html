@@ -1,1 +1,20 @@
-<p>assignments works!</p>
+
+<!-- <nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-3">
+      <li class="breadcrumb-item ml-1"><a href="/dashboard" style="text-decoration: none;">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Course</li>
+      <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+    </ol>
+  </nav> -->
+<div class="container">
+    <p style="font-size: larger;"><strong>Assignments</strong></p>
+    <ul class="list-group list-group-flush">
+      <div *ngFor="let record of data;let i = index">
+        <li class="list-group-item">
+          <p><strong>{{record.title}}</strong></p>
+          <p>Due {{record.due}} | {{record.points ? record.points : "-"}}/100<span *ngIf="record.points == ''"> | Not yet Graded</span></p>
+        </li>
+      </div>
+    </ul>
+  </div>
+  

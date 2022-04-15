@@ -18,6 +18,7 @@ import { AssignmentsComponent } from './dashboard/assignments/assignments.compon
 import { DiscussionsComponent } from './dashboard/discussions/discussions.component';
 import { GradesComponent } from './dashboard/grades/grades.component';
 import { CourseHomeComponent } from './dashboard/course-home/course-home.component';
+import { FacultyComponent } from './faculty/faculty.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CourseHomeComponent } from './dashboard/course-home/course-home.compone
     DiscussionsComponent,
     GradesComponent,
     CourseHomeComponent,
+    FacultyComponent,
     //CoursesComponent
   ],
   imports: [

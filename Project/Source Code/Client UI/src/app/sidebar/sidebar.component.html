@@ -33,7 +33,7 @@
         </a>
       </li>
       <li>
-        <a  routerLink="/home" (click)="moduleChange('')" [ngClass]="this.url.indexOf('faculty') != -1 ? 'nav-link active' : 'nav-link text-white'">
+        <a  (click)="moduleChange('faculty')" [ngClass]="this.url.indexOf('faculty') != -1 ? 'nav-link active' : 'nav-link text-white'">
           <!-- <svg class="bi me-2" width="16" height="16"><use xlink:href="bootstrap-icons.svg#people-circle"/></svg> -->
           <i class="bi-person-circle me-2" style="font-size: larger;"></i>
           Faculty
