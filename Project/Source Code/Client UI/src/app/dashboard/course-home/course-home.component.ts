@@ -12,7 +12,13 @@ export class CourseHomeComponent implements OnInit {
   constructor(private eventhandler: EventHandlerService) { }
 
   ngOnInit(){
-this.data = (this.eventhandler.getCourseValue());
+    this.link = "Home";
+    this.eventhandler.getCourseValue().subscribe((val: any) => {
+      if (val) {
+        this.data = val;
+        console.log('data 2 ', this.data);
+      }
+    });
   }
 
 }

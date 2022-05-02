@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestService } from '../services/requestService.service';
 
 @Component({
   selector: 'app-faculty',
@@ -25,9 +26,14 @@ data=[{
   contact:"+1 470 884 0851",
   subjects:"Web dev"
 }]
-  constructor() { }
+  constructor(private reqService: RequestService,) { }
 
   ngOnInit(): void {
+    this.reqService.allUsers().subscribe((data: any) => {
+      if (data) {
+        console.log('user logged in successfully', data);
+      }
+    });
   }
 
 }

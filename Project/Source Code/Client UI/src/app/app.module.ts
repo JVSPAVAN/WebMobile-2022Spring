@@ -19,6 +19,7 @@ import { DiscussionsComponent } from './dashboard/discussions/discussions.compon
 import { GradesComponent } from './dashboard/grades/grades.component';
 import { CourseHomeComponent } from './dashboard/course-home/course-home.component';
 import { FacultyComponent } from './faculty/faculty.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FacultyComponent } from './faculty/faculty.component';
     FormsModule,
     CarouselModule,
     WavesModule,
-    PathwayModule
+    PathwayModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

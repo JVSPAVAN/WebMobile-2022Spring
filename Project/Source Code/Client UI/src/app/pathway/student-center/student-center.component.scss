@@ -3,5 +3,10 @@
     height: 8em;
     //background: url(your_image_url) no-repeat;
     background-size: cover;
-    background-color: #48e9cc;
+    background-color: #3dc9ec;
+  }
+
+  .card :hover{
+    box-shadow: black;
+    cursor: pointer;
   }

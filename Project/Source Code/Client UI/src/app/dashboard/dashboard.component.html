@@ -13,17 +13,17 @@
             <p class="card-title" style="font-weight: bold;">{{record.title}}</p>
             <p class="card-text">{{record.desc}}</p>
             <div class="row col-md-12 m-0">
-              <i class="bi-megaphone col-md-4" style="font-size: x-large;text-align: center;">
+              <i class="bi-megaphone col-md-4 task" style="font-size: x-large;text-align: center;">
                 <span style="font-size: 0.5em;" *ngIf="record.unreadAnnouncements != 0"
                   class="shadow-lg position-absolute translate-middle badge rounded-circle bg-warning">
                   {{record.unreadAnnouncements}}
                 </span></i>
-              <i class="bi-chat-text col-md-4" style="font-size: x-large;text-align: center;">
+              <i class="bi-chat-text col-md-4 task" style="font-size: x-large;text-align: center;">
                 <span style="font-size: 0.5em;" *ngIf="record.unreadDiscussions != 0"
                 class="shadow-lg position-absolute translate-middle badge rounded-circle bg-warning">
                 {{record.unreadDiscussions}}
               </span></i>
-              <i class="bi-list-task col-md-4" style="font-size: x-large;text-align: center;">
+              <i class="bi-list-task col-md-4 task" style="font-size: x-large;text-align: center;">
                 <span style="font-size: 0.5em;" *ngIf="record.unreadAssignments != 0"
                 class="shadow-lg position-absolute translate-middle badge rounded-circle bg-warning">
                 {{record.unreadAssignments}}

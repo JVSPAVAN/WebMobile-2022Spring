@@ -3,7 +3,7 @@ body,
 .view {
   height: 70vh;
   border-radius: 1em;
-  margin-top: 4em;
+  margin-top: 1em;
 }
 
 /* Full Page Carousel itself*/
@@ -26,4 +26,9 @@ img {
     height: 70vh;
     box-shadow: rgba(0, 0, 0, 0.8);
   }
+}
+.grid-container {
+  display: grid;
+  column-gap: 50px;
+  text-align: center;
 }

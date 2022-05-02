@@ -14,7 +14,7 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page">
+        <a [ngClass]="link == 'Home' ? 'nav-link active' : 'nav-link link-dark'" (click)="link = 'Home'">
           Home
         </a>
       </li>
@@ -41,6 +41,10 @@
     </ul>
   </div>
   <div class="col-md-10">
+    <div *ngIf="link == 'Home'">
+      <h2 style="color: dodgerblue; text-align: center;margin-top: 2em;">{{data.desc}}</h2>
+      <p style=" text-align: center;margin-top: 1em;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    </div>
       <app-announcements *ngIf="link == 'Announcements'"></app-announcements>
       <app-assignments *ngIf="link == 'Assignments'"></app-assignments>
       <app-discussions *ngIf="link == 'Discussions'"></app-discussions>

@@ -7,6 +7,7 @@ import { FacultyComponent } from './faculty/faculty.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CoursesComponent } from './pathway/courses/courses.component';
+import { PersonalInfoComponent } from './pathway/personal-info/personal-info.component';
 import { StudentCenterComponent } from './pathway/student-center/student-center.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
     component: StudentCenterComponent,
   },
   { path: 'pathway/student-center/courses', component: CoursesComponent },
+  { path: 'pathway/student-center/personal-Info', component: PersonalInfoComponent },
   { path: 'courses', component: CourseHomeComponent },
   { path: 'faculty', component: FacultyComponent },
 ];

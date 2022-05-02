@@ -11,12 +11,13 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" routerLink="/home">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="loginVar=='false'">
               <a class="nav-link" routerLink="/login">Login</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/modules">Modules</a>
+            <li class="nav-item justify-content-end" *ngIf="loginVar=='true'" >
+              <a class="nav-link" routerLink="/login" (click)="logout()">Logout</a>
             </li>
+            
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

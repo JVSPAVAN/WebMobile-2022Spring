@@ -64,8 +64,8 @@ export class DashboardComponent implements OnInit {
       unreadGrades: 0,
     },
     {
-      title: '2022SP-COMP_SCI-5542-0001',
-      desc: 'COMP_SCI-5542-0001-17074-2022SP-Big Data Analytics & Apps',
+      title: '2022SP-COMP_SCI-5552A-0001',
+      desc: 'COMP_SCI-5552A-0001-12724-2022SP-Formal Software Specfctn',
       announcements: [
         {
           title: 'Hack-A-Roo team registration is due midnight today.',
@@ -114,8 +114,8 @@ export class DashboardComponent implements OnInit {
       unreadGrades: 0,
     },
     {
-      title: '2022SP-COMP_SCI-5542-0001',
-      desc: 'COMP_SCI-5542-0001-17074-2022SP-Big Data Analytics & Apps',
+      title: '2022SP-CSEE-5590-0003',
+      desc: 'CSEE-5590-0003-16456-2022SP-Special Topics',
       announcements: [
         {
           title: 'Hack-A-Roo team registration is due midnight today.',

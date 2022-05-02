@@ -7,11 +7,13 @@ const path = require("path");
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
+var cors = require('cors');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 //config db
 const db = require("./config/keys").mongoURI;

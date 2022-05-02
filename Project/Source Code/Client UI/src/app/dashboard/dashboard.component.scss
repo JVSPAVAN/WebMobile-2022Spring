@@ -5,3 +5,13 @@
     background-size: cover;
     background-color: #48e9cc;
   }
+
+  .card :hover{
+    box-shadow: black;
+    cursor: pointer;
+  }
+
+  .task :hover{
+    cursor: pointer;
+    color: yellow !important;
+  }

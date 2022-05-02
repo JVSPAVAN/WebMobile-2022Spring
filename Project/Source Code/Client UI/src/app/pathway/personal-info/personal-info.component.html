@@ -1,0 +1,30 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mt-3">
+      <li class="breadcrumb-item ml-1"><a href="/pathway/student-center" style="text-decoration: none;">Pathway</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Personal-Info</li>
+    </ol>
+  </nav>
+
+  <div class="container mt-3">
+<div class="card p-5" style="text-align: center;align-items: center;background-color: rgb(51, 176, 225);">
+    <img [src]="this.userData.user.avatar" alt="" width="200" height="200" class="rounded-circle me-2">
+    <h2 style="color: antiquewhite;margin-top: 1em;">{{username}}</h2>
+    <h3 style="color: antiquewhite;">{{userData.location}}</h3>
+    <div style="flex-direction: row;">
+    <i class="bi bi-body-text me-2 icon" style="font-size: xx-large;"></i>
+    <i class="bi bi-twitter me-2 icon" style="font-size: xx-large;"></i>
+</div>
+</div>
+<div class="card mt-2 p-3" style="background-color: rgb(222, 222, 222);text-align: center;">
+<h3>{{username}}'s' Bio</h3>
+<p>{{username}} doesn't have any bio to depict</p>
+<hr>
+<h3 style="margin-bottom: 1em;">Skills</h3>
+<div style="flex-direction: row;"> 
+<span>
+    <p><b *ngFor="let record of userData.skills" style="border-radius: 1em;background-color: rgb(75, 173, 235);padding: 0.4em;margin-right: 1em;">{{record}} </b></p>
+  </span>
+</div>
+</div>
+  </div>
+
